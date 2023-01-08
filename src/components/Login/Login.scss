@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+.Login {
+  background-image: url(../../../public/assets/login2.mp4);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  font-size: 25px;
+  color: rgb(19, 12, 12);
+  flex-direction: column;
+  align-items: center;
+  min-height: 85vh;
+
+  form {
+    .check {
+      color: white;
+    }
+  }
+
+span{
+
+    color: #212121;
+
+
+}
+
+}
+
+h1{
+
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.ant-btn {
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  font-size: 18px;
+  align-items: baseline;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  margin: 5px;
+  font-family: 'Berkshire Swash', cursive;
+}
+
+.ant-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.ant-btn:hover::before {
+  width: 100%;
+}
+

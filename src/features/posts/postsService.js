@@ -9,6 +9,7 @@ const getAllpost = async () => {
 };
 const getById = async (_id)=>{
   const res = await axios.get(API_URL +"/posts/getById/" + _id)
+  console.log(res.data)
   return res.data
 }
 

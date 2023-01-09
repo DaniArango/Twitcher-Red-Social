@@ -13,6 +13,7 @@ const login = async (userData) => {
   if (res.data) {
     localStorage.setItem("user", JSON.stringify(res.data));
   }
+  console.log(res.data)
   return res.data;
 };
 
@@ -27,10 +28,16 @@ const logout = async () => {
   return res.data;
 };
 
+const getUserByName = async(name)=>{
+  const res = await axios.get(API_URL + "/posts/getPostByName/" + name)
+  return res.data
+}
+
 const authService = {
   register,
   login,
   logout,
+  getUserByName
 };
 
 export default authService;

@@ -23,7 +23,9 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(login.fulfilled, (state, action) => {
-        state.user = action.payload;
+        state.user = action.payload;        
+        state.isSuccess = true;
+
       })
       .addCase(login.rejected, (state, action) => {
         state.isError = true;
@@ -61,6 +63,14 @@ export const login = createAsyncThunk("auth/loginUser", async (user) => {
     console.error(error);
   }
 });
+
+export const getUserByName = createAsyncThunk("users/getUserByName", async(name)=>{
+  try {
+    return await authService.getPostByName(name)
+  } catch (error) {
+    console.error(error)
+  }
+})
 
 export const logout = createAsyncThunk("auth/logoutUser", async () => {
   try {

@@ -20,7 +20,7 @@ const PostDetail = () => {
   return (
     <div>
       PostDetail
-      <p>Usuario: {post.User?.name}</p>
+      <p>Usuario: {post.userId?.name}</p>
       <p>Titulo: {post.title}</p>
       <p>Contenido: {post.body}</p>
     </div>

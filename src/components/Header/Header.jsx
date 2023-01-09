@@ -45,9 +45,6 @@ const Header = () => {
         <IconLogoMobile onClick={() => ChangeClick()}>
           <FaBars />
         </IconLogoMobile>
-        <Menu>
-          <Link to="/">Home</Link>
-        </Menu>
 
         {user ? (
           <>
@@ -64,20 +61,24 @@ const Header = () => {
             <Menu>
               <Link to="/createUser">Register</Link>
             </Menu>
-            <input
-              onKeyUp={handleChange}
-              placeholder="search post"
-              name="text"
-            />
-            {user?.user?.role === "admin" ? (
+            
+            {/* {user?.user?.role === "admin" ? (
               <Menu>
-                <Link to="/admin">Admin</Link>
+              <Link to="/admin">Admin</Link>
               </Menu>
-            ) : (
-              ""
-            )}
+              ) : (
+                ""
+              )} */}
           </>
         )}
+              <Menu>
+                <Link to="/">Home</Link>
+                <input
+                    onKeyUp={handleChange}
+                    placeholder="search post"
+                    name="text"
+                  />
+              </Menu>
       </NavbarWrapper>
     </NavbarContainer>
   );

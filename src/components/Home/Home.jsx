@@ -1,12 +1,13 @@
 import React from "react";
 import Posts from "../Posts/Posts";
+import "./Home.scss"
 
 
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="homecontainer">
+      
 
       <Posts />
     </div>

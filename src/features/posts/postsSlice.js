@@ -32,6 +32,14 @@ export const getPostByName = createAsyncThunk("posts/getPostByName", async(title
   }
 })
 
+export const deletePost = createAsyncThunk("posts/deletePost",async(_id)=>{
+  try {
+    return await postsService.deletePost(_id)
+  } catch (error) {
+    console.error(error)
+  }
+})
+
 export const postsSlice = createSlice({
   name: "posts",
 
@@ -55,6 +63,9 @@ reducers: {
   })
   .addCase(getPostByName.fulfilled,(state,action)=>{
     state.posts = action.payload
+  })
+  .addCase(deletePost.fulfilled,(state,action)=>{
+    state.posts = state.posts.filter(post => post.id !== +action.payload.id)
   })
   },
 });

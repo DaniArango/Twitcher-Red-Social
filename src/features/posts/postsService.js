@@ -18,10 +18,23 @@ const getPostByName = async(title)=>{
   return res.data
 }
 
+const deletePost= async(_id)=>{
+  const user = JSON.parse(localStorage.getItem("user"));
+  const res = await axios.delete(API_URL +"/posts/destroyPostById/"+ _id,
+  {
+    headers: {
+      authorization: user?.token,
+    },
+  }
+  )
+  return res.data
+}
+
 const postsService = {
   getAllpost,
   getById,
-  getPostByName
+  getPostByName,
+  deletePost,
 };
 
 export default postsService;

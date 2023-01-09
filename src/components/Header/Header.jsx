@@ -62,13 +62,13 @@ const Header = () => {
               <Link to="/createUser">Register</Link>
             </Menu>
             
-            {/* {user?.user?.role === "admin" ? (
+            {user?.user?.role === "admin" ? (
               <Menu>
               <Link to="/admin">Admin</Link>
               </Menu>
               ) : (
                 ""
-              )} */}
+              )}
           </>
         )}
               <Menu>

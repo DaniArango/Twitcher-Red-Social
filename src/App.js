@@ -9,6 +9,9 @@ import PostDetail from "./components/PostDetail/PostDetail";
 import { Footer } from "antd/es/layout/layout";
 import Search from "./components/Search/Search";
 import Register from "./components/Register/Register";
+import Admin from "./components/Admin/Admin";
+import AdminZone from "./guards/AdminZone";
+import PrivateZone from "./guards/PrivateZone";
  
 
 
@@ -24,12 +27,27 @@ function App() {
           <Route path="/createUser" element={<Register />} />
           </>
           <>
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <PrivateZone>
+                <Profile />
+              </PrivateZone>
+            }
+          />
           </>
           <>
           <Route path="/post/:_id" element={<PostDetail />} />
           <Route path="/search/:postName" element={<Search />} />
           </>
+          <Route
+            path="/admin"
+            element={
+              <AdminZone>
+                <Admin />
+              </AdminZone>
+            }
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

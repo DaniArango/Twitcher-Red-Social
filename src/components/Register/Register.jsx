@@ -66,6 +66,7 @@ const Register = (props) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
+      
     }));
   };
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getById } from "../../features/posts/postsSlice";
+import "./PostDetail.scss"
 
 const PostDetail = () => {
   const { _id } = useParams();
@@ -18,11 +19,14 @@ const PostDetail = () => {
   console.log(_id);
 
   return (
-    <div>
-      PostDetail
-      <p>Usuario: {post.userId?.name}</p>
-      <p>Titulo: {post.title}</p>
-      <p>Contenido: {post.body}</p>
+    <div className="detail-container">
+    <div className="postdetail">
+      <p>Twitcher@: {post.userId?.name}</p>
+      <br />
+      <p>Titulo: <br />{post.title}</p>
+      <br />
+      <p>Consejo:<br /> {post.body}</p>
+    </div>
     </div>
   );
 };

@@ -34,24 +34,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-@media screen and (max-width: 960px) {
-    width: 100%;
-    height: 90vh;
-    position:absolute;
-    top: 80px;
-    left: ${({click}) => click ? 0 : "-100"};
-    flex-direction: colum;
-    transition: 0.5s all ease-in;
-    background-color: #01A9DB;
 }
 `;
 
 
-export const IconLogoMobile = styled.div`
-display:none
-
-@media screen and (max-width: 960px)
-display: flex;
-color: #01A9DB;
-font-size:2rem;
-`;

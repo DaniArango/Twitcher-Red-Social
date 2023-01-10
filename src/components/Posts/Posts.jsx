@@ -15,7 +15,7 @@ const Posts = () => {
   return (
     <div>
       <h1>Remueve tu Caldero</h1>
-      <h3>Aqui podras ver todos los consejos brujiles, que tienen nuestr@ usuari@s... <br />¡Comparte tambien los tuyos!</h3>
+      <h3>Aqui podras ver todos los consejos brujiles, que tienen nuestr@s Twitcher@s... <br />¡Comparte tambien los tuyos!</h3>
 
       <Post />
     </div>

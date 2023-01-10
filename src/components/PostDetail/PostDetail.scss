@@ -1,0 +1,26 @@
+.postdetail{
+    width: 720px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 8px;
+    background-image: url(../../../public/assets/log.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Old Standard TT', serif;
+    font-size: 20px;
+      color:#000000;
+
+}
+
+.detail-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../public/assets/log.jpg) ;
+    background-size: 100%;
+    background-repeat: no-repeat;
+   
+}

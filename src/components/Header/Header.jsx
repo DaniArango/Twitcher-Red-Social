@@ -5,13 +5,12 @@ import "./Header.scss";
 import { useState } from "react";
 import {
   IconLogo,
-  IconLogoMobile,
   Menu,
   NavbarContainer,
   NavbarWrapper,
 } from "../Navbar/Navbar.elements";
 import { GiFlexibleStar } from "react-icons/gi";
-import { FaBars } from "react-icons/fa";
+import { GiArchiveResearch } from "react-icons/gi";
 
 const Header = () => {
   const [click, setClick] = useState(false);
@@ -42,9 +41,7 @@ const Header = () => {
           <GiFlexibleStar size={"2em"} />
           Twitcher
         </IconLogo>
-        <IconLogoMobile onClick={() => ChangeClick()}>
-          <FaBars />
-        </IconLogoMobile>
+        
 
         {user ? (
           <>
@@ -64,9 +61,11 @@ const Header = () => {
                 <Link to="/">Home</Link>
                 </Menu>
                 <Menu>
+
+                  <GiArchiveResearch />
                 <input
                     onKeyUp={handleChange}
-                    placeholder="search post"
+                    placeholder="Buscar"
                     name="text"
                   />
               </Menu>

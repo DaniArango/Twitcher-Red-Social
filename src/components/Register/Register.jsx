@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../features/auth/authSlice";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, notification } from "antd";
 import { useNavigate } from "react-router-dom";
+import "./Register.scss"
+
 
 const formItemLayout = {
   labelCol: {
@@ -45,12 +47,16 @@ const Register = (props) => {
   });
   const { name, email, password, password2, age } = formData;
 
+  
   const navigate = useNavigate();
   const [form] = Form.useForm();
-
+  
   const onFinish = (values) => {
+    formData.password = values.password;
+    formData.password2 = values.password2;
+    console.log(formData)
     dispatch(register(formData));
-    navigate("/loginUser");
+    navigate("/profile");
     props.setModal(false);
   };
 
@@ -64,17 +70,31 @@ const Register = (props) => {
     }));
   };
 
+  const { isSuccess, message, isError } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    if (isSuccess) {
+      notification.success({
+        message: "Bienvenid@ Twitcher@, es hora de remover el caldero",
+
+        description: message,
+      });
+    }
+
+    if (isError) {
+      notification.error({ message: "Error", description: message });
+    }
+  }, [isSuccess, isError, message]);
 
   return (
-    <div>
+    <div className="register">  
       <div>
-        <h2>Bienvenido Twitchero</h2>
-        <h5>¡¡Resgistrate!! Es totalmente gratis</h5>
+        <h1 className="bienvetwit">Bienvenido Twitcher@</h1>
+        <h3 className="saludo">¡¡Resgistrate!! Es totalmente gratis</h3>
       </div>
       <>
-        <Form autoComplete="true"
-          
+        <Form 
+          autoComplete="true"
           {...formItemLayout}
           form={form}
           onFinish={onFinish}
@@ -83,7 +103,6 @@ const Register = (props) => {
 
           <div className="userForm">
             <Form.Item
-              
               label="Nombre"
               value={name}
               onChange={onChange}
@@ -94,12 +113,10 @@ const Register = (props) => {
                 },
               ]}
             >
-              <Input 
-              name="name"/>
+              <Input name="name" />
             </Form.Item>
 
             <Form.Item
-              
               label="Correo"
               value={email}
               onChange={onChange}
@@ -114,8 +131,7 @@ const Register = (props) => {
                 },
               ]}
             >
-              <Input  
-              name="email"/>
+              <Input name="email" />
             </Form.Item>
 
             <Form.Item
@@ -163,7 +179,6 @@ const Register = (props) => {
 
             <Form.Item
               type="number"
-              
               label="Edad"
               value={age}
               onChange={onChange}
@@ -174,11 +189,11 @@ const Register = (props) => {
                 },
               ]}
             >
-              <Input 
-              name="age"/>
+              <Input name="age" />
             </Form.Item>
           </div>
           <div className="userRules">
+            <br />
             <p>
               Al registrarte con nosotros, aceptas nuestros términos y
               condiciones. <br />

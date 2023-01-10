@@ -1,0 +1,25 @@
+.publicacionescontenedor{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    background-image: url(../../../public/assets/log.jpg);
+    background-size: cover;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 30px;
+}
+
+.busquedatitulo{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 30px;
+      color:#000000;
+}
+
+.searchcontainer{
+
+    background-image: url(../../../public/assets/log.jpg);
+    background-size: cover;
+}
+

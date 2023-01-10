@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'antd';
 import Register from '../Register/Register';
-
+import "./Modal.scss"
 
 
 const ModalRegis = () => {
@@ -18,7 +18,7 @@ const ModalRegis = () => {
       <Button type="primary" onClick={showModal}>
        Register Now! 
       </Button>
-      <Modal title="¡¡Welcome!!" open={isModalOpen}footer={null} 
+      <Modal title="" open={isModalOpen}footer={null} 
      onCancel={handleCancel}>
         <Register setModal={setIsModalOpen}/>
       </Modal>

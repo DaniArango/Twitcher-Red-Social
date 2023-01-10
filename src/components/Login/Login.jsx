@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, reset } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import ModalRegis from "./Modal";
-import { Button, Checkbox, Divider, Form} from "antd";
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Button,  Form } from "antd";
 import { notification } from "antd";
-import "../Login/Login.scss"
+import "../Login/Login.scss";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -46,48 +45,67 @@ const Login = () => {
   }, [isError, isSuccess, message]);
 
   return (
-<div className="Login">
-     <Divider orientation="center">
-        <h1>LOGIN</h1>
-      </Divider>
-
-    <form onSubmit={onSubmit}>
-      <input
-         name="email"
-         value={email}
-         onChange={onChange}
-         rules={[
-           {
-             required: true,
-             message: "Por favor, ingresa tu correo!",
-           },
-         ]}
-         prefix={<UserOutlined className="site-form-item-icon" />}
-         placeholder="Email"
-      />
-      <input
-        name="password"
-        value={password}
-        onChange={onChange}
-        rules={[
-          {
-            required: true,
-            message: "Por favor, ingresa tu contraseña!",
-          },
-        ]}  
-        prefix={<LockOutlined className="site-form-item-icon" />}
-           type="password"
-           placeholder="Password"
-      />
-<br /><br />
-       <Form.Item>
-         <Button type="primary" htmlType="submit">
-           Login
-         </Button>
-         <ModalRegis />
-       </Form.Item>
-    </form>
-    </div>
+    <div className="Auth-form-container">
+      <form className="Auth-form" onSubmit={onSubmit}>
+          <h3 className="Auth-form-title">Login</h3>
+          <div className="form-group mt-3">
+            <label>Correo</label>
+            <br/>
+            <input
+            name="email"
+          value={email}
+          onChange={onChange}
+              type="email"
+              className="form-control mt-1"
+            rules={[
+              {
+                required: true,
+                message: "Por favor, ingresa tu correo!",
+              },
+            ]}
+            placeholder="Correo"
+            />
+            
+          </div>
+          <div className="form-group mt-3">
+            <label>Contraseña</label>
+            <br/>
+            <input
+              name="password"
+            value={password}
+            onChange={onChange}
+              type="password"
+              className="form-control mt-1"
+            rules={[
+              {
+                required: true,
+                message: "Por favor, ingresa tu contraseña!",
+              },
+            ]}
+            placeholder="Contraseña"
+            />
+          <br />
+          <br />
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Sign In
+            </Button>
+            <p className="forgot-password text-right mt-2">
+            Forgot <a href="#">password?</a>
+          </p>
+            
+            <h2 className="sincuenta">
+            ¿No tienes cuenta?
+            <br />
+            ¿A que esperas para ser parte, de la mejor comunidad?
+            </h2>
+            <br />
+            <br />
+            <ModalRegis />
+          </Form.Item>
+          </div>
+        </form>
+        </div>
   );
 };
 export default Login;

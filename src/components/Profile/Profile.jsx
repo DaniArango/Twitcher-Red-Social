@@ -3,6 +3,8 @@ import { Avatar, Card } from 'antd';
 import React from 'react';
 import "./Profile.scss"
 import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+import CreatePost from '../Posts/CreatePost/CreatePost';
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth);
@@ -37,6 +39,19 @@ const Profile = () => {
       
     />
   </Card>
+  <CreatePost/>
+  <div>
+          {user.user.postIds?.map((post) => (
+            <div key={post._id}>
+            <Link to={"/post/" + post._id}>
+              <p>{post.title}</p>
+              
+            </Link>
+            </div>
+            
+          ))}
+          
+        </div>
   </div>
   )}
 

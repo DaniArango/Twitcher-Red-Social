@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
+import "./Post.scss"
 
 const Post = () => {
     const { posts, isLoading } = useSelector((state) => state.posts);
@@ -10,11 +11,11 @@ const Post = () => {
       }
 
     return (
-        <div>
+        <div className='publicacionescontenedor'>
           {posts.map((post) => (
             <div key={post._id}>
             <Link to={"/post/" + post._id}>
-              <p>{post.title}</p>
+              <div className='publicacion'>{post.title}</div>
               
             </Link>
             </div>

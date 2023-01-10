@@ -56,23 +56,14 @@ const Header = () => {
         ) : (
           <>
             <Menu>
-              <Link to="/loginUser">Login</Link>
+              <Link to="/loginUser">Login/Register</Link>
             </Menu>
-            <Menu>
-              <Link to="/createUser">Register</Link>
-            </Menu>
-            
-            {user?.user?.role === "admin" ? (
-              <Menu>
-              <Link to="/admin">Admin</Link>
-              </Menu>
-              ) : (
-                ""
-              )}
           </>
         )}
               <Menu>
                 <Link to="/">Home</Link>
+                </Menu>
+                <Menu>
                 <input
                     onKeyUp={handleChange}
                     placeholder="search post"

@@ -1,20 +1,20 @@
 .register{
-  color: #03566f;
+    color: #03566f;
     text-align: center;
     background-image: url(../../../public/assets/regi.jpg);
     background-attachment: fixed ;
     font-family: 'Berkshire Swash', cursive;
     display: flex;
-    font-size: 25px;
     color: rgb(0, 0, 0);
     flex-direction: column;
-    align-items: center;
-    min-height: 85vh;
+    
+  
 }
 
 .ant-form {
   font-family: 'Old Standard TT', serif;
   font-size: 18px;
+  
 }
 
 .ant-form-item {
@@ -43,7 +43,9 @@
 .userForm{
 
   display:flex;
-  flex-direction: column;   
-  margin-right:300px
+  flex-direction: column;  
+  align-items:center; 
+  
+ 
 
 }

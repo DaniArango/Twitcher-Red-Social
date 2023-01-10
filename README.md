@@ -1,11 +1,3 @@
-## Índice
-
-- Sobre el proyecto
-  - Instalacion y despliegue
-  - Tecnologias Usadas
-  - Requerimientos
-  - Desafios que se presentaron
-  - Autor
 
 ## Sobre el proyecto
 
@@ -13,7 +5,7 @@ En este proyecto se unifica todo lo aprendido durante el bootcamp en the bright 
 En este proyecto se desarrollará una red social en la que los usuarios se registrarán, logearán y publicarán utilizando la API de la red social que creó anteriormente.
 
 
-### Instalacion y despliegue
+### Instalacion
 
 Para descargar el repositorio, en Visual Studio, abra una terminal y ejecute el siguiente comando:
 

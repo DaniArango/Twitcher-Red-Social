@@ -56,7 +56,6 @@ const Register = (props) => {
     formData.password2 = values.password2;
     console.log(formData)
     dispatch(register(formData));
-    navigate("/profile");
     props.setModal(false);
   };
 
